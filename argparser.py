@@ -37,7 +37,23 @@ import sys
 
 # Checking the number of arguments
 
-if len(sys.argv) <3:
-    print("NO arguments have been privided!!!")
-else:
-    print(f"received {len(sys.argv) - 1} arguments: {sys.argv[1:]}")
+# if len(sys.argv) <3:
+#     print("NO arguments have been privided!!!")
+# else:
+#     print(f"received {len(sys.argv) - 1} arguments: {sys.argv[1:]}")
+
+####################################################
+
+# 5. Using sys.argv with argument parsing
+# argparse is better for handling.
+
+import argparse
+
+parser = argparse.ArgumentParser(description="example script with arguments")
+parser.add_argument(("name"), type=str, help="your name")
+parser.add_argument("age", type=int, help="your age")
+# The function below is similar to the ones above, but this one asks you to use the input method as --yolo
+parser.add_argument("--yolo", type=int, help="jjust input a number  ", required=False)
+
+args = parser.parse_args()
+print(f"hello {args.name}!!! Your age is {args.age}!! yolo number {args.yolo}")
