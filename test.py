@@ -18,3 +18,7 @@ if arg.ages:
 else:
     print("ugly you forgot to enter ages")
 
+
+
+
+
