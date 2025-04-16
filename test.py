@@ -1,24 +1,16 @@
-# Creation of argument parser object
-# Adding a required argument
-# Adding an optional argument
-# Parses the arguments
-# Output results
-
-
 import argparse
 
-parser = argparse.ArgumentParser(description="not sure what this descirption is for or how its used")
-parser.add_argument("name", type=str, help="enter the name bro")
-parser.add_argument("--ages", type=int, nargs="+", help="whatup homie cunt master 33")
+# create the object
+parser = argparse.ArgumentParser(description="descrption")
 
-arg = parser.parse_args()
-print(f"what up {arg.name}, you such balls bro")
-if arg.ages:
-    print(f"your ages are {arg.ages}")
-else:
-    print("ugly you forgot to enter ages")
+# create the required argument
+parser.add_argument("name", type=str, help="what is my name", default="red")
 
+# create argument with multiple possible inputs
+parser.add_argument("how many titties you want?", nargs="+", help="help me i want titties")
 
+# parse the arguments
+args = parser.parse_args()
 
-
-
+# output
+print()
